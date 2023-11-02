@@ -1,0 +1,15 @@
+li {
+  margin-bottom: 5px;
+  border-radius: 8px;
+  padding: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+li.uncomplite {
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+li.complite {
+  border: 1px solid green;
+  background-color: rgba(0, 255, 0, 0.1);
+}/*# sourceMappingURL=biznes.module.css.map */
