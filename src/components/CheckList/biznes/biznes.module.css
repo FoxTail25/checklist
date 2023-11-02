@@ -3,7 +3,7 @@ li {
   border-radius: 8px;
   padding: 3px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 li.uncomplite {
   border: 1px solid red;
