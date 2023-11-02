@@ -1,9 +1,24 @@
 import React from 'react'
 
-export const Biznes = () => {
+export const Biznes = ({ record, changeRecord}) => {
+
+  const { id, bisnes, complite } = record
+
+ 
+  console.log(complite);
+
   return (
-    <div>
-        
-    </div>
+    <li>
+      <div style={{display: "flex", justifyContent: "space-between"}}>
+        {bisnes}
+        <span onClick={() => changeRecord(id)}>
+          {
+            complite
+              ? "выполнено"
+              : "не выполнено"
+          }
+        </span>
+      </div>
+    </li>
   )
 }
