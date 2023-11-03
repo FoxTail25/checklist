@@ -14,12 +14,18 @@ li.complite {
   border: 1px solid green;
   background-color: rgba(0, 255, 0, 0.1);
 }
-li span {
-  padding: 5px;
+li .liblock {
+  display: flex;
+  justify-content: space-between;
 }
-li span.complite {
+li .liblock div {
+  width: 110px;
+  padding: 5px;
+  text-align: center;
+}
+li .liblock div.complite {
   color: green;
 }
-li span.uncomplite {
+li .liblock div.uncomplite {
   color: red;
-}/*# sourceMappingURL=biznes.module.css.map */
+}

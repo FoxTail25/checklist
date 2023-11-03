@@ -6,9 +6,9 @@ import styles from './checklist.module.css'
 
 
 let bisnesArr = [
-  { id: nanoid(), bisnes: 'Дело №1', complite: false },
-  { id: nanoid(), bisnes: 'Дело №2', complite: false },
-  { id: nanoid(), bisnes: 'Дело №3', complite: false },
+  { id: nanoid(), bisnes: ['Заголовок', 'новое дело'], complite: false },
+  { id: nanoid(), bisnes: ['Заголовок', 'новое дело'], complite: false },
+  { id: nanoid(), bisnes: ['Заголовок', 'новое дело'], complite: false },
 ]
 
 export const CheckList = () => {
@@ -27,7 +27,7 @@ export const CheckList = () => {
   function changeRecordText(id, text) {
     setBisnes([...bisnes.map(el => {
       if (el.id === id) {
-        el.bisnes = text
+        el.bisnes[1] = text
       }
       return el
     })])

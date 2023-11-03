@@ -7,35 +7,44 @@ export const Biznes = ({ id, bisnes, complite }) => {
 
   const [isEdit, setIsEdit] = useState(false)
 
+  console.log(bisnes)
+
 
   const { status, text, del } = useContext(CheckListContext)
 
 
   return (
     <li className={complite ? styles.complite : styles.uncomplite}>
-      <div>
+      <div className={styles.liblock}>
 
-        <span className={complite ? styles.complite : styles.uncomplite} onClick={() => status(id)}>
+        <div className={complite ? styles.complite : styles.uncomplite} onClick={() => status(id)}>
           {
             complite
-              ? "V"
-              : "X"
+              ? <>"V" <br /> Выполнено</>
+              : <>"X" <br /> Не выполнено </>
           }
-        </span>
+        </div>
 
-        {
-          isEdit
-            ?
-            <>
-              <input style={{ padding: "0 5px" }} value={bisnes} onChange={event => text(id, event.target.value)} />
-              <button onClick={() => setIsEdit(!isEdit)}>save</button>
-            </>
+        <div className={styles.record}>
+          {
 
-            : <span onClick={() => setIsEdit(!isEdit)}>
-              {bisnes}
-            </span>
-        }
-      <button onClick={() => del(id)}>удалить запись</button>
+            isEdit
+              ?
+              <>
+                <textarea value={bisnes[1]} onChange={event => text(id, event.target.value)} />
+                <button onClick={() => setIsEdit(!isEdit)}>save</button>
+              </>
+
+              : <>
+                <span>{bisnes[0]}</span>
+                <br />
+                <span onClick={() => setIsEdit(!isEdit)}>
+                  {bisnes[1]}
+                </span>
+              </>
+          }
+        </div>
+        <button onClick={() => del(id)}>удалить запись</button>
       </div>
     </li>
   )

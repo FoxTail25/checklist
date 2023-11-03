@@ -5,7 +5,8 @@ li {
     cursor: pointer;
     transition: .2s;
     margin-right: 30px;
-
+    
+    
     &.uncomplite {
         border: 1px solid red;
         background-color: rgba(255, 0, 0, 0.100); 
@@ -14,14 +15,27 @@ li {
         border: 1px solid green;
         background-color: rgba(0, 255, 0, 0.100); 
     }
+    .liblock {
+        display: flex;
+        justify-content: space-between;
 
-    span {
-        padding: 5px;
-        &.complite {
-            color: green;
+        div {
+            width: 110px;
+            padding: 5px;
+            text-align: center;
+
+            &.complite {
+                color: green;
+            }
+            &.uncomplite {
+                color: red;
+            }
         }
-        &.uncomplite {
-            color: red;
-        }
+        // div.record {
+        //     display: flex;
+        //     flex:1;
+        //     height: 100%;
+        // }
     }
+    
 }
