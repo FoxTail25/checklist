@@ -1,28 +1,25 @@
 import React, { useContext, useState } from 'react'
 import { CheckListContext } from '../contextCheckList'
-import styles from './biznes.module.css'
+import styles from './sassCSS/biznes.module.css'
 // import 
 
-export const Biznes = ({ record }) => {
+export const Biznes = ({ id, bisnes, complite }) => {
 
   const [isEdit, setIsEdit] = useState(false)
 
-  const { id, bisnes, complite } = record
 
-  const {status, text, del} = useContext(CheckListContext)
+  const { status, text, del } = useContext(CheckListContext)
 
-
-  // console.log(status);
 
   return (
     <li className={complite ? styles.complite : styles.uncomplite}>
       <div>
 
-        <span style={{ padding: "0 5px" }} onClick={() => status(id)}>
+        <span className={complite ? styles.complite : styles.uncomplite} onClick={() => status(id)}>
           {
             complite
-              ? "выполнено"
-              : "не выполнено"
+              ? "V"
+              : "X"
           }
         </span>
 
@@ -30,7 +27,7 @@ export const Biznes = ({ record }) => {
           isEdit
             ?
             <>
-              <input  style={{ padding: "0 5px" }} value={bisnes} onChange={event => text(id, event.target.value)} />
+              <input style={{ padding: "0 5px" }} value={bisnes} onChange={event => text(id, event.target.value)} />
               <button onClick={() => setIsEdit(!isEdit)}>save</button>
             </>
 
@@ -38,7 +35,7 @@ export const Biznes = ({ record }) => {
               {bisnes}
             </span>
         }
-        <button onClick={()=>del(id)}>удалить запись</button>
+      <button onClick={() => del(id)}>удалить запись</button>
       </div>
     </li>
   )

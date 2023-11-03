@@ -4,6 +4,8 @@ li {
     padding: 3px;
     cursor: pointer;
     transition: .2s;
+    margin-right: 30px;
+
     &.uncomplite {
         border: 1px solid red;
         background-color: rgba(255, 0, 0, 0.100); 
@@ -13,4 +15,13 @@ li {
         background-color: rgba(0, 255, 0, 0.100); 
     }
 
+    span {
+        padding: 5px;
+        &.complite {
+            color: green;
+        }
+        &.uncomplite {
+            color: red;
+        }
+    }
 }

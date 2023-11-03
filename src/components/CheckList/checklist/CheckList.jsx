@@ -49,7 +49,7 @@ export const CheckList = () => {
   }
 
 
-  let result = bisnes.map((record) => <Biznes key={record.id} record={record} />)
+  let result = bisnes.map((record) => <Biznes key={record.id} {...record} />)
 
 
   return (

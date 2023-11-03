@@ -4,6 +4,7 @@ li {
   padding: 3px;
   cursor: pointer;
   transition: 0.2s;
+  margin-right: 30px;
 }
 li.uncomplite {
   border: 1px solid red;
@@ -12,4 +13,13 @@ li.uncomplite {
 li.complite {
   border: 1px solid green;
   background-color: rgba(0, 255, 0, 0.1);
+}
+li span {
+  padding: 5px;
+}
+li span.complite {
+  color: green;
+}
+li span.uncomplite {
+  color: red;
 }/*# sourceMappingURL=biznes.module.css.map */
