@@ -34,8 +34,7 @@ export const CheckList = () => {
   }
 
   function addRecord() {
-    let bisnesNumber = bisnes.length + 1;
-    setBisnes([...bisnes, { id: nanoid(), bisnes: `Дело №${bisnesNumber}`, complite: false }])
+    setBisnes([...bisnes, { id: nanoid(), bisnes: ['Новая заголовок', 'Новое дело'], complite: false }])
   }
 
   function dellRecord(id) {
