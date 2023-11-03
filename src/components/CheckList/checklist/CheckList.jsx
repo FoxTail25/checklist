@@ -3,6 +3,7 @@ import { Biznes } from '../biznes/Biznes'
 import { nanoid } from 'nanoid'
 import { CheckListContext } from '../contextCheckList'
 import styles from './sassCSS/checklist.module.css'
+import { Header } from '../header/Header'
 
 
 let bisnesArr = [
@@ -72,7 +73,7 @@ export const CheckList = () => {
 
   return (
     <div className={styles.checklist__bg}>
-      <h1>Список дел</h1>
+      <Header/>
       <ol>
         <CheckListContext.Provider value={changeRecord}>
           {result}

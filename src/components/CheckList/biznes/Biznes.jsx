@@ -17,7 +17,7 @@ export const Biznes = ({ id, bisnes, complite }) => {
     <li className={complite ? styles.complite : styles.uncomplite}>
       <div className={styles.liblock}>
 
-        <div className={complite ? styles.complite : styles.uncomplite} onClick={() => status(id)}>
+        <div title="click для изменения статуса записи" className={complite ? styles.complite : styles.uncomplite} onClick={() => status(id)}>
           {
             complite
               ? <>"V" <br /> Выполнено</>
@@ -31,9 +31,9 @@ export const Biznes = ({ id, bisnes, complite }) => {
             isEditHead
               ? <>
                 <input value={bisnes[0]} onChange={event => text(id, event.target.value, 0)} />
-                <button onClick={() => setIsEditHead(!isEditHead)}>save</button>
+                <button onClick={() => setIsEditHead(!isEditHead)}>сохранить</button>
               </>
-              : <h2 onClick={()=> setIsEditHead(!isEditHead)}>{bisnes[0]}</h2>
+              : <h2  title='click для изменения'  onClick={()=> setIsEditHead(!isEditHead)}>{bisnes[0]}</h2>
           }
 
           {
@@ -41,11 +41,11 @@ export const Biznes = ({ id, bisnes, complite }) => {
               ?
               <>
                 <textarea value={bisnes[1]} onChange={event => text(id, event.target.value, 1)} />
-                <button onClick={() => setIsEditText(!isEditText)}>save</button>
+                <button onClick={() => setIsEditText(!isEditText)}>сохранить</button>
               </>
 
               : <>
-                <span onClick={() => setIsEditText(!isEditText)}>
+                <span title='click для изменения' onClick={() => setIsEditText(!isEditText)}>
                   {bisnes[1]}
                 </span>
               </>

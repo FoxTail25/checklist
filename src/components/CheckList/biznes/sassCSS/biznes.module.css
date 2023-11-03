@@ -41,10 +41,17 @@ li .liblock div.record h2 {
   margin: 0;
   font-size: 1.2em;
 }
+li .liblock div.record input {
+  width: 80%;
+  text-align: center;
+  font-weight: 600;
+  margin: 3px 0;
+}
 li .liblock div.record textarea {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
+  text-align: center;
 }
 li .liblock .delBtn {
   height: -moz-fit-content;
