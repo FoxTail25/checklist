@@ -55,7 +55,14 @@ li {
         }
         .delBtn {
             height: fit-content;
+            padding: 4px 2px;
             align-self: center;
+            border-radius: 8px;
+            transition: .2s;
+            &:hover {
+                background: rgba(255, 0, 0, 0.486);
+                box-shadow: 0 0 10px red;
+            }
         }
     }
 }

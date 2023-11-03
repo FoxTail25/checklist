@@ -7,4 +7,10 @@
   transform: translate(-50%, 0);
   padding: 5px;
   border-radius: 8px;
+  transition: 0.2s;
+}
+.checklist__bg .addrecord:hover {
+  color: rgb(0, 0, 0);
+  background: rgba(251, 255, 1, 0.8);
+  box-shadow: 0 0 15px rgb(204, 174, 4);
 }
