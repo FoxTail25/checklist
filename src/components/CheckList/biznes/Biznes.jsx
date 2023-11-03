@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { CheckListContext } from '../contextCheckList'
 import styles from './sassCSS/biznes.module.css'
-// import 
 
 export const Biznes = ({ id, bisnes, complite }) => {
 
-  const [isEdit, setIsEdit] = useState(false)
+  const [isEditText, setIsEditText] = useState(false)
+  const [isEditHead, setIsEditHead] = useState(false)
 
   console.log(bisnes)
 
@@ -26,25 +26,32 @@ export const Biznes = ({ id, bisnes, complite }) => {
         </div>
 
         <div className={styles.record}>
-          {
 
-            isEdit
+          {
+            isEditHead
+              ? <>
+                <input value={bisnes[0]} onChange={event => text(id, event.target.value, 0)} />
+                <button onClick={() => setIsEditHead(!isEditHead)}>save</button>
+              </>
+              : <h2 onClick={()=> setIsEditHead(!isEditHead)}>{bisnes[0]}</h2>
+          }
+
+          {
+            isEditText
               ?
               <>
-                <textarea value={bisnes[1]} onChange={event => text(id, event.target.value)} />
-                <button onClick={() => setIsEdit(!isEdit)}>save</button>
+                <textarea value={bisnes[1]} onChange={event => text(id, event.target.value, 1)} />
+                <button onClick={() => setIsEditText(!isEditText)}>save</button>
               </>
 
               : <>
-                <span>{bisnes[0]}</span>
-                <br />
-                <span onClick={() => setIsEdit(!isEdit)}>
+                <span onClick={() => setIsEditText(!isEditText)}>
                   {bisnes[1]}
                 </span>
               </>
           }
         </div>
-        <button onClick={() => del(id)}>удалить запись</button>
+        <button className={styles.delBtn} onClick={() => del(id)}>удалить запись</button>
       </div>
     </li>
   )

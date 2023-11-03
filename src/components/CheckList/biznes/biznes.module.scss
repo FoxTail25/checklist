@@ -5,37 +5,57 @@ li {
     cursor: pointer;
     transition: .2s;
     margin-right: 30px;
-    
-    
+
+
     &.uncomplite {
         border: 1px solid red;
-        background-color: rgba(255, 0, 0, 0.100); 
+        background-color: rgba(255, 0, 0, 0.100);
     }
+
     &.complite {
         border: 1px solid green;
-        background-color: rgba(0, 255, 0, 0.100); 
+        background-color: rgba(0, 255, 0, 0.100);
     }
+
     .liblock {
         display: flex;
         justify-content: space-between;
 
-        div {
+        .complite {
+            color: green;
             width: 110px;
             padding: 5px;
             text-align: center;
+        }
 
-            &.complite {
-                color: green;
+        .uncomplite {
+            color: red;
+            width: 110px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        div.record {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            flex: 1;
+            align-items: center;
+
+            h2 {
+                margin: 0;
+                font-size: 1.2em;
             }
-            &.uncomplite {
-                color: red;
+
+            textarea {
+                width: 100%;
+                height: fit-content;
             }
         }
-        // div.record {
-        //     display: flex;
-        //     flex:1;
-        //     height: 100%;
-        // }
+        .delBtn {
+            height: fit-content;
+            align-self: center;
+        }
     }
-    
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Biznes } from '../biznes/Biznes'
 import { nanoid } from 'nanoid'
 import { CheckListContext } from '../contextCheckList'
-import styles from './checklist.module.css'
+import styles from './sassCSS/checklist.module.css'
 
 
 let bisnesArr = [
@@ -24,10 +24,10 @@ export const CheckList = () => {
     })])
   }
 
-  function changeRecordText(id, text) {
+  function changeRecordText(id, text,n) {
     setBisnes([...bisnes.map(el => {
       if (el.id === id) {
-        el.bisnes[1] = text
+        el.bisnes[n] = text
       }
       return el
     })])
@@ -60,7 +60,7 @@ export const CheckList = () => {
           {result}
         </CheckListContext.Provider>
       </ol>
-      <button onClick={addRecord}>добавить дело</button>
+      <button className={styles.addrecord}onClick={addRecord}>добавить дело</button>
     </div>
   )
 }

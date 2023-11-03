@@ -18,14 +18,36 @@ li .liblock {
   display: flex;
   justify-content: space-between;
 }
-li .liblock div {
+li .liblock .complite {
+  color: green;
   width: 110px;
   padding: 5px;
   text-align: center;
 }
-li .liblock div.complite {
-  color: green;
-}
-li .liblock div.uncomplite {
+li .liblock .uncomplite {
   color: red;
+  width: 110px;
+  padding: 5px;
+  text-align: center;
+}
+li .liblock div.record {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  align-items: center;
+}
+li .liblock div.record h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+li .liblock div.record textarea {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+li .liblock .delBtn {
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: center;
 }
