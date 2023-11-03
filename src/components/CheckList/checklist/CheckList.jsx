@@ -13,7 +13,22 @@ let bisnesArr = [
 
 export const CheckList = () => {
 
-  const [bisnes, setBisnes] = useState(bisnesArr)
+  let data;
+
+  ;(function checkLocalStore() {
+    let localData = localStorage.getItem('records')
+    if(localData) {
+      data = JSON.parse(localData)
+    } else {
+      data = bisnesArr
+    }
+  }())
+
+  function setLocalStore() {
+    localStorage.setItem('records', JSON.stringify(bisnes))
+  }
+
+  const [bisnes, setBisnes] = useState(data)
 
   function changeRecordStatus(id) {
     setBisnes([...bisnes.map(el => {
@@ -22,6 +37,7 @@ export const CheckList = () => {
       }
       return el
     })])
+    setLocalStore()
   }
 
   function changeRecordText(id, text,n) {
@@ -31,14 +47,17 @@ export const CheckList = () => {
       }
       return el
     })])
+    setLocalStore()
   }
 
   function addRecord() {
     setBisnes([...bisnes, { id: nanoid(), bisnes: ['Новая заголовок', 'Новое дело'], complite: false }])
+    setLocalStore()
   }
 
   function dellRecord(id) {
     setBisnes([...bisnes.filter(record => record.id !== id)])
+    setLocalStore()
   }
 
   const changeRecord = {
