@@ -7,7 +7,7 @@ export const Biznes = ({ id, bisnes, complite }) => {
   const [isEditText, setIsEditText] = useState(false)
   const [isEditHead, setIsEditHead] = useState(false)
 
-  console.log(bisnes)
+  // console.log(bisnes)
 
 
   const { status, text, del } = useContext(CheckListContext)

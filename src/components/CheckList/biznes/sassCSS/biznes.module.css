@@ -56,7 +56,7 @@ li .liblock div.record textarea {
 li .liblock .delBtn {
   height: -moz-fit-content;
   height: fit-content;
-  padding: 4px 2px;
+  padding: 4px 3px;
   align-self: center;
   border-radius: 8px;
   transition: 0.2s;

@@ -79,7 +79,7 @@ export const CheckList = () => {
           {result}
         </CheckListContext.Provider>
       </ol>
-      <button className={styles.addrecord}onClick={addRecord}>добавить дело</button>
+      <button className={styles.addrecord} onClick={addRecord}>добавить дело</button>
     </div>
   )
 }
