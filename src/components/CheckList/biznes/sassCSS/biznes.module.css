@@ -49,12 +49,10 @@ li .liblock div.record input {
 }
 li .liblock div.record textarea {
   width: 100%;
-  height: -moz-fit-content;
   height: fit-content;
   text-align: center;
 }
 li .liblock .delBtn {
-  height: -moz-fit-content;
   height: fit-content;
   padding: 4px 3px;
   align-self: center;
@@ -64,4 +62,4 @@ li .liblock .delBtn {
 li .liblock .delBtn:hover {
   background: rgba(255, 0, 0, 0.486);
   box-shadow: 0 0 10px red;
-}
+}/*# sourceMappingURL=biznes.module.css.map */
