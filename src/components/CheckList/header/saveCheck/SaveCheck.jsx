@@ -20,15 +20,7 @@ export const SaveCheck = () => {
     }
 
 
-    // const [local, setLocal] = useState(true)
-    // const [server, setServer] = useState(false)
 
-    function changeSavePlace() {
-        // setLocal(!local)
-        // setServer(!server)
-
-        // console.log(local, server)
-    }
 
 console.log('save', save)
 
@@ -39,10 +31,9 @@ console.log('save', save)
             </p>
 
             <div className={s.buttons}>
-                {/* <button disabled = {!(save && local)} onClick={changeSavePlace}>локально <br/>(в браузере)</button>
-                <button disabled = {!(save && server)} onClick={changeSavePlace}>глобально  <br/>(на сервере)</button> */}
-                <button disabled={!save} className={save ? s.active: ''} onClick={changeSavePlace}>локально <br/>(в браузере)</button>
-                <button disabled onClick={changeSavePlace}>глобально  <br/>(на сервере)</button>
+
+                <button disabled={!save} className={save ? s.active: ''} >локально <br/>(в браузере)</button>
+                <button disabled >глобально  <br/>(на сервере)</button>
             </div>
         </div>
     )
