@@ -33,7 +33,7 @@ console.log('save', save)
             <div className={s.buttons}>
 
                 <button disabled={!save} className={save ? s.active: ''} >локально <br/>(в браузере)</button>
-                <button disabled >глобально  <br/>(на сервере)</button>
+                <button disabled title='Функционал пока не реализован'>глобально<br/>(на сервере)</button>
             </div>
         </div>
     )

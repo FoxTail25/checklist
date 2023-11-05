@@ -17,12 +17,8 @@
 
             &.active {
                 background-color: rgba(0, 128, 0, 0.441);
-
-            }
-            &.passive {
-                background-color: rgb(169, 169, 169);
                 &:hover {
-                    background-color: rgb(245, 245, 245);
+                    box-shadow: 0 0 5px gold;
                 }
             }
         }
