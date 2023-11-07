@@ -1,20 +1,39 @@
 .checklist__bg {
+    max-width: 1024px;
+    margin: 0 auto;
+
     h1 {
         text-align: center;
     }
-    .addrecord {
-        margin: 0 auto;
-        margin-left: 50%;
-        transform: translate(-40%, 0);
-        padding: 5px;
-        border-radius: 8px;
-        transition: .2s;
 
-        &:hover {
-            color:rgb(0, 0, 0);
-            background: rgba(251, 255, 1, 0.8);
-            box-shadow: 0 0 15px rgb(204, 174, 4);
-
+    ol {
+        padding-left: 30px;
+        @media (max-width: 425px) {
+            padding-left: 20px;
         }
+
+        li {
+            
+            @media (max-width: 425px) {
+                margin-right: 10px;
+            }
+        }
+
+    }
+}
+
+.addrecord {
+    margin: 0 auto;
+    margin-left: 50%;
+    transform: translate(-40%, 0);
+    padding: 5px;
+    border-radius: 8px;
+    transition: .2s;
+
+    &:hover {
+        color: rgb(0, 0, 0);
+        background: rgba(251, 255, 1, 0.8);
+        box-shadow: 0 0 15px rgb(204, 174, 4);
+
     }
 }

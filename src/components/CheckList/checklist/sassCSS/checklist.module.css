@@ -1,7 +1,25 @@
+.checklist__bg {
+  max-width: 1024px;
+  margin: 0 auto;
+}
 .checklist__bg h1 {
   text-align: center;
 }
-.checklist__bg .addrecord {
+.checklist__bg ol {
+  padding-left: 30px;
+}
+@media (max-width: 425px) {
+  .checklist__bg ol {
+    padding-left: 20px;
+  }
+}
+@media (max-width: 425px) {
+  .checklist__bg ol li {
+    margin-right: 10px;
+  }
+}
+
+.addrecord {
   margin: 0 auto;
   margin-left: 50%;
   transform: translate(-40%, 0);
@@ -9,8 +27,8 @@
   border-radius: 8px;
   transition: 0.2s;
 }
-.checklist__bg .addrecord:hover {
+.addrecord:hover {
   color: rgb(0, 0, 0);
   background: rgba(251, 255, 1, 0.8);
   box-shadow: 0 0 15px rgb(204, 174, 4);
-}/*# sourceMappingURL=checklist.module.css.map */
+}
