@@ -37,6 +37,10 @@ li .liblock div.record {
   flex: 1;
   align-items: center;
 }
+li .liblock div.record .rs {
+  font-style: italic;
+  text-decoration: line-through;
+}
 li .liblock div.record h2 {
   margin: 0;
   font-size: 1.2em;

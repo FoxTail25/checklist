@@ -14,21 +14,23 @@ let bisnesArr = [
 
 export const CheckList = () => {
 
-  let data;
+  let data, saveBtn;
 
-  ;(function checkLocalStore() {
+  
+  // ;(function checkLocalStore() {
     let localData = localStorage.getItem('records')
     if(localData) {
       data = JSON.parse(localData)
     } else {
       data = bisnesArr
     }
-  }())
+  // }())
 
   function setLocalStore() {
     localStorage.setItem('records', JSON.stringify(bisnes))
   }
 
+  
   const [bisnes, setBisnes] = useState(data)
 
   function changeRecordStatus(id) {

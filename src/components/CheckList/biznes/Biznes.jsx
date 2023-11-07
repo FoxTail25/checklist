@@ -33,7 +33,7 @@ export const Biznes = ({ id, bisnes, complite }) => {
                 <input value={bisnes[0]} onChange={event => text(id, event.target.value, 0)} />
                 <button onClick={() => setIsEditHead(!isEditHead)}>сохранить</button>
               </>
-              : <h2  title='click для изменения'  onClick={()=> setIsEditHead(!isEditHead)}>{bisnes[0]}</h2>
+              : <h2  title='click для изменения' className={complite ? styles.rs: styles.ra } onClick={()=> setIsEditHead(!isEditHead)}>{bisnes[0]}</h2>
           }
 
           {
@@ -45,7 +45,7 @@ export const Biznes = ({ id, bisnes, complite }) => {
               </>
 
               : <>
-                <span title='click для изменения' onClick={() => setIsEditText(!isEditText)}>
+                <span title='click для изменения'  className={complite ? styles.rs: styles.ra } onClick={() => setIsEditText(!isEditText)}>
                   {bisnes[1]}
                 </span>
               </>
