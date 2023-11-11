@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Biznes } from '../biznes/Biznes'
 import { nanoid } from 'nanoid'
 import { CheckListContext } from '../contextCheckList'
@@ -16,22 +16,27 @@ export const CheckList = () => {
 
   let data, saveBtn;
 
-  
-  // ;(function checkLocalStore() {
-    let localData = localStorage.getItem('records')
-    if(localData) {
-      data = JSON.parse(localData)
-    } else {
-      data = bisnesArr
-    }
-  // }())
 
-  function setLocalStore() {
-    localStorage.setItem('records', JSON.stringify(bisnes))
+  let localData = localStorage.getItem('records')
+  if (localData) {
+    data = JSON.parse(localData)
+  } else {
+    data = bisnesArr
   }
 
-  
   const [bisnes, setBisnes] = useState(data)
+
+useEffect(()=> {
+  setLocalStore()
+},[bisnes])
+
+
+
+  function setLocalStore() {
+    localStorage.setItem('records', JSON.stringify(bisnes));
+    console.log('locStor',bisnes)
+  }
+
 
   function changeRecordStatus(id) {
     setBisnes([...bisnes.map(el => {
@@ -40,27 +45,28 @@ export const CheckList = () => {
       }
       return el
     })])
-    setLocalStore()
+    // setLocalStore()
   }
 
-  function changeRecordText(id, text,n) {
+  function changeRecordText(id, text, n) {
     setBisnes([...bisnes.map(el => {
       if (el.id === id) {
         el.bisnes[n] = text
       }
       return el
     })])
-    setLocalStore()
+    // setLocalStore()
   }
 
   function addRecord() {
     setBisnes([...bisnes, { id: nanoid(), bisnes: ['Новая заголовок', 'Новое дело'], complite: false }])
-    setLocalStore()
+    console.log('add bis',bisnes)
+    // setLocalStore()
   }
 
   function dellRecord(id) {
     setBisnes([...bisnes.filter(record => record.id !== id)])
-    setLocalStore()
+    // setLocalStore()
   }
 
   const changeRecord = {
@@ -75,7 +81,7 @@ export const CheckList = () => {
 
   return (
     <div className={styles.checklist__bg}>
-      <Header/>
+      <Header />
       <ol>
         <CheckListContext.Provider value={changeRecord}>
           {result}
