@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .container p {
@@ -18,4 +19,4 @@
 }
 .container .buttons button.active:hover {
   box-shadow: 0 0 5px gold;
-}/*# sourceMappingURL=saveCheck.module.css.map */
+}
